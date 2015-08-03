@@ -16,6 +16,7 @@ do
   pf=`conda build . --output`
   echo $pf
   conda build -q --channel "file://${lcc}" . | tee -a build.log 2>&1
+  cp $pf $lcc_osx
   popd
 done
 
